@@ -42,7 +42,7 @@ router.post('/', async (req, res) => {
     res.status(400).json(err);
   }
 });
-//Login
+
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -106,6 +106,10 @@ router.get('/', (req, res) => {
 
 router.get('/profile', (req, res) => {
   res.render('profile');
+})
+
+router.get('/login', (req, res) => {
+  res.render('login');
 })
 
 
