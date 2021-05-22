@@ -4,9 +4,9 @@ const withAuth = require('../utils/auth');
 const express    = require('express');
 const mysql      = require('mysql');
 
-router.get('/issues/:id', withAuth, async (req, res) => {
+router.get('/issues/:id', async (req, res) => {
     try {
-      const issueData = await issue.findByPk(req.params.id, {
+      const issueData = await Issue.findByPk(req.params.id, {
         include: [
         {
         model: Issue,
@@ -15,10 +15,10 @@ router.get('/issues/:id', withAuth, async (req, res) => {
         ]
     });
 
-      const users = userData.map((issues) => issues.get({ plain: true }));
+      const issue = issueData.map((issues) => issues.get({ plain: true }));
   
       res.render('homepage', {
-        users,
+        issue,
         // Pass the logged in flag to the template
         logged_in: req.session.logged_in,
       });

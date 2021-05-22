@@ -1,15 +1,15 @@
 const router   = require('express').Router();
-const { User } = require('../models/User');
+const { User, Issue } = require('../models/User');
 const express    = require('express');
 const mysql      = require('mysql');
 const withAuth = require('../utils/auth');
 
-router.get('/project/:id', withAuth, async (req, res) => {
+router.get('/user/:id',  async (req, res) => {
   try {
-    const issueData = await issue.findByPk(req.params.id, {
+    const userData = await User.findByPk(req.params.id, {
       include: [
       {
-      model: Issue,
+      model: User,
       attributes: ['name'],
       },
       ]
