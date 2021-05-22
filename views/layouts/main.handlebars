@@ -9,7 +9,23 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <header>
-    <h1>Peer Connection</h1>
+    <h1 class="page-title">Peer Connections</h1>
+    <nav class="nav">
+        <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+        <div>
+            <a href="/profile">Profile</a>
+            <a href="/homepage">Logout</a>
+        </div>
+        {{!-- <a href="/profile">profile</a> |
+        <button class="no-button" id="logout">logout</button> --}}
+        {{else}}
+        <div>
+            <a href="/login">Login</a>
+        </div>
+        {{/if}}
+    </nav>
+
 </header>
 <body>
     {{{body}}}
