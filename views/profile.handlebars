@@ -1,1 +1,41 @@
-<h1>Hello!</h1>
+
+    <div class="profile-title">
+        <h1>Profile</h1>
+    </div>
+    <div class="profile-body">
+        <div class="picture-edit">
+            <div class="profile-picture-container">
+                <img src="./img/avatar.png" alt="" class="profile-picture">
+            </div>
+            <div class="btn-container">
+                <button class="btn edit-profile-btn">Edit Profile Picture</button>
+            </div>
+        </div>
+        <div class="profile-info">
+            <h2>Name: {{ name }}</h2>
+            <h2>Email: {{ email }}</h2>
+            <h2>Role: {{ role }}</h2>
+        </div>
+    </div>
+
+    <div class="post-list">
+        <div class="post-title">
+            <h2>Previous Posts</h2>
+        </div>
+        <div class="previous-post">
+            <div class="previous-post-poster">
+                <div class="previous-post-name">
+                    <h4>Ryan Scherr {{ post.user_name }}</h4>
+                </div>
+                <div>
+                    <h4>Student {{ post.role }}</h4>
+                </div>
+            </div>
+            <div class="previous-post-title">
+                <p>I can't seems to figure out how to make this button work in JS...help!! {{ post.title }}</p>
+            </div>
+            <div>
+                <button class="btn view-post-btn">View Post</button>
+            </div>
+        </div>
+    </div>
