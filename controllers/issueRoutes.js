@@ -1,8 +1,31 @@
 const router = require('express').Router();
-const { Issue } = require('../../models');
-const withAuth = require('../../utils/auth');
+const { Issue } = require('../models/Issue');
+const withAuth = require('../utils/auth');
+const express    = require('express');
+const mysql      = require('mysql');
 
+router.get('/issues/:id', withAuth, async (req, res) => {
+    try {
+      const issueData = await issue.findByPk(req.params.id, {
+        include: [
+        {
+        model: Issue,
+        attributes: ['name'],
+        },
+        ]
+    });
 
+      const users = userData.map((issues) => issues.get({ plain: true }));
+  
+      res.render('homepage', {
+        users,
+        // Pass the logged in flag to the template
+        logged_in: req.session.logged_in,
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
 //create issue
 router.post('/', withAuth, async (req, res) => {
     try {
@@ -39,3 +62,4 @@ router.post('/', withAuth, async (req, res) => {
     }
   });
 
+  module.exports = router;

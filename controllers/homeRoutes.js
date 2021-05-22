@@ -1,7 +1,31 @@
 const router   = require('express').Router();
-const { User } = require('../models');
-var express    = require('express');
-var mysql      = require('mysql');
+const { User } = require('../models/User');
+const express    = require('express');
+const mysql      = require('mysql');
+const withAuth = require('../utils/auth');
+
+router.get('/project/:id', withAuth, async (req, res) => {
+  try {
+    const issueData = await issue.findByPk(req.params.id, {
+      include: [
+      {
+      model: Issue,
+      attributes: ['name'],
+      },
+      ]
+  });
+
+    const users = userData.map((project) => project.get({ plain: true }));
+
+    res.render('homepage', {
+      users,
+      // Pass the logged in flag to the template
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 //Create New User
 router.post('/', async (req, res) => {
