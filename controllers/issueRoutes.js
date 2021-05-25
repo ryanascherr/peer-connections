@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const { Issue } = require('../models/');
 const withAuth = require('../utils/auth');
-const express    = require('express');
-const mysql      = require('mysql');
+const express = require('express');
+const mysql = require('mysql');
 
 router.get('/issue/:id', async (req, res) => {
     try {
