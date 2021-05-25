@@ -12,12 +12,6 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  process.exit(0);
-};
-
-const seedDatabase = async () => {
-  await sequelize.sync({ force: true });
-
   await Issue.bulkCreate(issueData, {
     individualHooks: true,
     returning: true,
@@ -27,5 +21,3 @@ const seedDatabase = async () => {
 };
 
 seedDatabase();
-
-hello!
