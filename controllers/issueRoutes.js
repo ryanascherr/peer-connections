@@ -1,32 +1,26 @@
 const router = require('express').Router();
-const { Issue } = require('../models/Issue');
+const { Issue } = require('../models/');
 const withAuth = require('../utils/auth');
 const express    = require('express');
 const mysql      = require('mysql');
 
-router.get('/issues/:id', async (req, res) => {
+router.get('/issue/:id', async (req, res) => {
     try {
       const issueData = await Issue.findByPk(req.params.id, {
-        include: [
-        {
-        model: Issue,
-        attributes: ['name'],
-        },
-        ]
-    });
-
-      const issue = issueData.map((issues) => issues.get({ plain: true }));
-  
-      res.render('homepage', {
-        issue,
-        // Pass the logged in flag to the template
-        logged_in: req.session.logged_in,
+        
       });
+  
+      if (!issueData) {
+        res.status(404).json({ message: 'No issue found with this id!' });
+        return;
+      }
+  
+      res.status(200).json(issueData);
     } catch (err) {
       res.status(500).json(err);
     }
-  });
-//create issue
+  })
+
 router.post('/', withAuth, async (req, res) => {
     try {
       const newIssue = await Issue.create({
