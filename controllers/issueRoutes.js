@@ -3,7 +3,7 @@ const { Issue } = require('../models/');
 const withAuth = require('../utils/auth');
 const express = require('express');
 const mysql = require('mysql');
-
+//api route
 router.get('/issue/:id', async (req, res) => {
     try {
       const issueData = await Issue.findByPk(req.params.id, {
@@ -14,11 +14,13 @@ router.get('/issue/:id', async (req, res) => {
         res.status(404).json({ message: 'No issue found with this id!' });
         return;
       }
-  
-      res.status(200).json(issueData);
+      const issues = issueData.get({ plain: true });
+      res.render(`issues`, {issues});
+      // res.status(200).json(issueData);
     } catch (err) {
-      res.status(500).json(err);
+      // res.status(500).json(err);
     }
+    
   })
 
 router.post('/', withAuth, async (req, res) => {
