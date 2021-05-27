@@ -1,7 +1,7 @@
-let newVar = $(".test");
+let idOfIssue = $(".test");
 
-console.log(newVar);
+console.log(idOfIssue);
 
-for (let i = 0; i < newVar.length; i++) {
-    console.log(newVar[i].getAttribute('data-id'))
+for (let i = 0; i < idOfIssue.length; i++) {
+    console.log(idOfIssue[i].getAttribute('data-id'))
 }
