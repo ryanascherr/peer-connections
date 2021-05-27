@@ -2,6 +2,11 @@
 <div class="explanation">
   <h2>A community board, dedicated to enhancing students of Trilogies ability to connect with peers, allowing for an improved learning experience through peer experience sharing. You can search your issue below, click on popular issues below, or make your own issue by creating an account or logging in.</h2>
 </div>
+{{#if logged_in}}
+  <div class="create-btn-box">
+    <button class="create-btn">Create a Post</button>
+  </div>
+{{/if}}
 <div class="search-bar">
   <input type="text" placeholder="Search...">
   <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
