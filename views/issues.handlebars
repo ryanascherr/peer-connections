@@ -1,5 +1,22 @@
-<div>
-<h1>This is issues.handlebars</h1>
-<div>{{issues.title}}</div>
-<div>{{issues.content}}</div>
+<div class="issue-box">
+    <div class="pic-name">
+        <img src="" alt="">
+        <h6>*Username* posted...</h6>
+    </div>
+    <div class="issue-full">
+        <div class="issue-title">
+            <h5>{{issues.title}}</h5>
+        </div>
+        <div class="issue-content">
+            <p>{{issues.content}}</p>
+        </div>
+    </div>
+</div>
+
+<div class="reply-box">
+    <h6>Write a Response</h6>
+    <textarea name="input-field" id="" cols="30" rows="5"></textarea>
+    <div class="field-submit-btn-box">
+        <input class="field-submit-btn" type="submit" value="Submit">
+    </div>
 </div>
