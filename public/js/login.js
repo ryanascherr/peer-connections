@@ -30,7 +30,7 @@ const signupFormHandler = async (event) => {
   const password = document.querySelector('#password-signup').value.trim();
   //check route!!!
   if (name && email && password) {
-    const response = await fetch('/login', {
+    const response = await fetch('/create', {
       method: 'POST',
       body: JSON.stringify({ name, email, password }),
       headers: { 'Content-Type': 'application/json' },
@@ -47,6 +47,6 @@ const signupFormHandler = async (event) => {
 document
   .querySelector('.login-form')
   .addEventListener('submit', loginFormHandler);
-  document
+document
   .querySelector('.signup-form')
   .addEventListener('submit', signupFormHandler);

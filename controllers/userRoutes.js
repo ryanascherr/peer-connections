@@ -22,7 +22,7 @@ router.get('/user/:id', async (req, res) => {
 })
 
 //Create New User
-router.post('/', async (req, res) => {
+router.post('/create', async (req, res) => {
   try {
     const userData = await User.create(req.body);
 
