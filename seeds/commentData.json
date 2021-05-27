@@ -1,0 +1,17 @@
+[
+    {
+        "content": "This is the first comment.",
+        "user_id": 2,
+        "issue_id": 5
+    },
+    {
+        "content": "This is the second comment",
+        "user_id": 2,
+        "issue_id": 7
+    },
+    {
+        "content": "This is the third comment",
+        "user_id": 4,
+        "issue_id": 5
+    }
+]
