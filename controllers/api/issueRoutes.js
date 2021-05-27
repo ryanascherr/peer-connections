@@ -19,6 +19,19 @@ router.get('/:id', async (req, res) => {
       res.json(issueData);
   });
 
+router.post('/', (req, res) => {
+  try {
+    const newIssue = Issue.create({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
+
+    res.status(200).json(newIssue);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 // router.post('/', withAuth, async (req, res) => {
 //     try {
 //       const newIssue = await Issue.create({
