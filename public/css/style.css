@@ -209,6 +209,12 @@ textarea {
     padding: 10px;
 }
 
+.create-issue-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .create-btn-box {
     display: flex;
     justify-content: center;
@@ -218,14 +224,23 @@ textarea {
 .create-btn {
     padding: 10px;
     background-color: #4E5C74;
-    color: white;
     border-radius: 10px;
     font-size: x-large;
+    color: white;
 }
 
 .create-btn:hover {
     background-color: white;
-    color: #4E5C74;
     border: 2px solid #4E5C74;
     cursor: pointer;
+    color: #4E5C74;
+}
+
+.issue-title-create, .issue-text-create {
+    width: 25%;
+    padding: 10px;
+}
+
+.blue {
+    color: #4E5C74;
 }
