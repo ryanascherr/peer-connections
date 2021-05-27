@@ -24,6 +24,15 @@ router.get('/issue/:id', async (req, res) => {
     
   })
 
+router.get('/create', async (req, res) => {
+  if (!req.session.logged_in) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('create');
+})
+
 router.post('/', withAuth, async (req, res) => {
     try {
       const newIssue = await Issue.create({
