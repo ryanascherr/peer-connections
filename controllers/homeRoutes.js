@@ -1,21 +1,32 @@
 const router = require('express').Router();
-const { Issue } = require('../models');
+const { Issue, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 //Brings user to homepage (homepage.handlebars)
 router.get('/', async (req, res) => {
     //We need all of the Issues from the database so that they can be displayed on the front page
-    const issueData = await Issue.findAll().catch((err) => { 
-        res.json(err);
-      });
-        const issues = issueData.map((dish) => dish.get({ plain: true }));
-        res.render('homepage', { issues, logged_in: req.session.logged_in });
+    const issueData = await Issue.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        }
+      ]
+    })
+      const issues = issueData.map((dish) => dish.get({ plain: true }));
+      res.render('homepage', { issues, logged_in: req.session.logged_in });
 });
 
 //Brings user to issue page with the corresponding id number
 router.get('/issue/:id', async (req, res) => {
     try {
       const issueData = await Issue.findByPk(req.params.id, {
+        include: [
+          {
+            model: User,
+            attributes: ['name'],
+          }
+        ]
       });
       if (!issueData) {
         res.status(404).json({ message: 'No issue found with this id!' });
@@ -23,6 +34,7 @@ router.get('/issue/:id', async (req, res) => {
       }
       //Renders the issue page with a variable called 'issues' which contains all of that issue's information
       const issues = issueData.get({ plain: true });
+      console.table(issues);
       res.render(`issues`, {issues});
     } catch (err) {
     }

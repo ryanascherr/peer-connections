@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
       res.json(err);
     });
       res.json(issuesData);
-    });
+});
 
 router.get('/:id', async (req, res) => {
   const issueData = await Issue.findByPk(req.params.id, {
@@ -17,7 +17,7 @@ router.get('/:id', async (req, res) => {
     return;
   }
       res.json(issueData);
-  });
+});
 
 router.post('/', (req, res) => {
   try {
@@ -39,7 +39,7 @@ router.delete('/:id', withAuth, async (req, res) => {
         id: req.params.id,
         // user_id: req.session.user_id,
       },
-    });
+});
 
     if (!deletedIssue) {
       res.status(404).json({ message: 'No issue found with this id!' });
