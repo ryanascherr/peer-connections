@@ -30,3 +30,5 @@ Issue.hasMany(Comment, {
 Comment.belongsTo(Issue, {
     foreignKey: 'issue_id'
 })
+
+module.exports = { User, Issue, Comment};
