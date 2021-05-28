@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Issue, User } = require('../models');
+const { Issue, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 //Brings user to homepage (homepage.handlebars)
@@ -25,6 +25,10 @@ router.get('/issue/:id', async (req, res) => {
           {
             model: User,
             attributes: ['name'],
+          },
+          {
+            model: Comment,
+            attributes: ['content']
           }
         ]
       });
@@ -34,7 +38,7 @@ router.get('/issue/:id', async (req, res) => {
       }
       //Renders the issue page with a variable called 'issues' which contains all of that issue's information
       const issues = issueData.get({ plain: true });
-      console.table(issues);
+      console.log(issues);
       res.render(`issues`, {issues});
     } catch (err) {
     }

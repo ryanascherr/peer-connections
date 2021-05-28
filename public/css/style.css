@@ -244,3 +244,12 @@ textarea {
 .blue {
     color: #4E5C74;
 }
+
+.all-comments {
+    margin-top: 30px;
+}
+
+.comment-box {
+    padding: 10px;
+    width: 50%;
+}
