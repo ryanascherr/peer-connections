@@ -30,6 +30,7 @@ Comment.init(
         
         user_id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
                 model: 'user',
                 key: 'id',
@@ -38,6 +39,7 @@ Comment.init(
 
         issue_id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
                 model: 'issue',
                 key: 'id',
