@@ -26,7 +26,7 @@ router.post('/', (req, res) => {
 });
 
 //delete route to remove comments, requires authentication
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const deletedComment = await Comment.destroy({
       where: {

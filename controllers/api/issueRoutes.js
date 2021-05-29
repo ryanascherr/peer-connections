@@ -39,7 +39,7 @@ router.post('/', (req, res) => {
 
 
 //delete route, to destroy issues, requires authentication
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const deletedIssue = await Issue.destroy({
       where: {
