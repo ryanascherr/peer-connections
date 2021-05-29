@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// get route to find all comments
 router.get('/', async (req, res) => {
     const commentsData = await Comment.findAll().catch((err) => { 
         res.json(err);
@@ -9,6 +10,7 @@ router.get('/', async (req, res) => {
         res.json(commentsData);
 });
 
+//post route to create comments, requires authentication
 router.post('/', (req, res) => {
     try {
       const newComment = Comment.create({
@@ -23,6 +25,7 @@ router.post('/', (req, res) => {
     }
 });
 
+//delete route to remove comments, requires authentication
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const deletedComment = await Comment.destroy({
