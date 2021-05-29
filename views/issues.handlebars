@@ -16,9 +16,9 @@
 {{#if logged_in}}
 <div class="reply-box">
     <h6>Write a Response</h6>
-    <textarea name="input-field" id="" cols="30" rows="5"></textarea>
+    <textarea class="comment-field" name="input-field" id="" cols="30" rows="5"></textarea>
     <div class="field-submit-btn-box">
-        <input class="field-submit-btn" type="submit" value="Submit">
+        <button class="btn btn-primary field-submit-btn" type="submit">Submit</button>
     </div>
 </div>
 {{/if}}
@@ -31,3 +31,7 @@
         </div>
     {{/each}}
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script src="./js/comment.js"></script>
