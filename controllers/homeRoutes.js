@@ -39,7 +39,7 @@ router.get('/issue/:id', async (req, res) => {
       //Renders the issue page with a variable called 'issues' which contains all of that issue's information
       const issues = issueData.get({ plain: true });
       console.log(issues);
-      res.render(`issues`, {issues});
+      res.render(`issues`, {issues, logged_in: req.session.logged_in});
     } catch (err) {
     }
 });
@@ -62,7 +62,7 @@ router.get('/create', async (req, res) => {
       return;
     }
   
-    res.render('create');
+    res.render('create', { logged_in: req.session.logged_in });
 });
 
 //Unsure about profile page right now
