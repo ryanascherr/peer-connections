@@ -24,7 +24,7 @@ router.get('/:id', async (req, res) => {
 
 
 //post route to create new issues, this is for logged in users only
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
   try {
     const newIssue = Issue.create({
       ...req.body,

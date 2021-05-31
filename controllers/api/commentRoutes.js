@@ -11,13 +11,16 @@ router.get('/', async (req, res) => {
 });
 
 //post route to create comments, requires authentication
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
+    console.log(req.body)
     try {
       const newComment = Comment.create({
         ...req.body,
-        // user_id: req.session.user_id,
-        // issue_id: req.session.issue_id
+        user_id: 1,
+        issue_id: req.body.btnID,
       });
+
+      console.log
   
       res.status(200).json(newComment);
     } catch (err) {
