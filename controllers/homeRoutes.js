@@ -6,6 +6,9 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
     //We need all of the Issues from the database so that they can be displayed on the front page
     const issueData = await Issue.findAll({
+      order: [
+        ['date_created', 'DESC']
+      ],
       include: [
         {
           model: User,
