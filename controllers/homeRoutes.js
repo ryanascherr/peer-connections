@@ -31,7 +31,7 @@ router.get('/issue/:id', async (req, res) => {
           },
           {
             model: Comment,
-            attributes: ['content']
+            attributes: ['content', 'user_id', 'date_created']
           }
         ]
       });
@@ -41,7 +41,7 @@ router.get('/issue/:id', async (req, res) => {
       }
       //Renders the issue page with a variable called 'issues' which contains all of that issue's information
       const issues = issueData.get({ plain: true });
-      console.log(issues);
+      // console.table(issues);
       res.render(`issues`, {issues, logged_in: req.session.logged_in});
     } catch (err) {
     }
