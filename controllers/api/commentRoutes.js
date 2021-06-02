@@ -4,7 +4,15 @@ const withAuth = require('../../utils/auth');
 
 // get route to find all comments
 router.get('/', async (req, res) => {
-    const commentsData = await Comment.findAll().catch((err) => { 
+    const commentsData = await Comment.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+
+    }).catch((err) => { 
         res.json(err);
       });
         res.json(commentsData);
@@ -12,15 +20,13 @@ router.get('/', async (req, res) => {
 
 //post route to create comments, requires authentication
 router.post('/', withAuth, (req, res) => {
-    console.log(req.body)
     try {
       const newComment = Comment.create({
         ...req.body,
-        user_id: 1,
+        user_id: req.session.user_id,
+        user_name: req.session.user_name,
         issue_id: req.body.btnID,
       });
-
-      console.log
   
       res.status(200).json(newComment);
     } catch (err) {

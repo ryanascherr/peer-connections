@@ -23,10 +23,12 @@
 </div>
 {{/if}}
 
+<h6>{{issues.user_name}}</h6>
+
 <div class="all-comments">
     {{#each issues.comments as |comment|}}
         <div class="comment-box">
-            <h6>User posted...</h6>
+            <h6>{{comment.user_id}} posted on {{comment.date_created}}</h6>
             <p>{{comment.content}}</p>
         </div>
     {{/each}}
