@@ -68,25 +68,24 @@ router.get('/create', async (req, res) => {
     res.render('create', { logged_in: req.session.logged_in });
 });
 
-//Unsure about profile page right now
+router.get('/profile', withAuth, async (req, res) => {
+    try {
+      // Find the logged in user based on the session ID
+      const userData = await User.findByPk(req.session.user_id, {
+        attributes: { exclude: ['password'] },
+        include: [{ model: Issue }],
+      });
+  
+      const user = userData.get({ plain: true });
 
-// router.get('/profile', withAuth, async (req, res) => {
-//     try {
-//       // Find the logged in user based on the session ID
-//       const userData = await User.findByPk(req.session.user_id, {
-//         attributes: { exclude: ['password'] },
-//         include: [{ model: Issue }],
-//       });
-  
-//       const user = userData.get({ plain: true });
-  
-//       res.render('profile', {
-//         ...user,
-//         logged_in: true
-//       });
-//     } catch (err) {
-//       res.status(500).json(err);
-//     }
-// });
+      console.table(user);
+      res.render('profile', {
+        ...user,
+        logged_in: true
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+});
 
 module.exports = router;

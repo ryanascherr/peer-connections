@@ -1,8 +1,10 @@
-
     <div class="profile-title">
         <h1>Profile</h1>
     </div>
     <div class="profile-body">
+        <div class="profile-info">
+            <h2>{{ name }}</h2>
+        </div>
         <div class="picture-edit">
             <div class="profile-picture-container">
                 <img src="/img/avatar.png" alt="" class="profile-picture">
@@ -12,30 +14,22 @@
             </div>
         </div>
         <div class="profile-info">
-            <h2>Name: {{ name }}</h2>
-            <h2>Email: {{ email }}</h2>
-            <h2>Role: {{ role }}</h2>
+            <h2>{{ email }}</h2>
         </div>
     </div>
-
     <div class="post-list">
         <div class="post-title">
-            <h2>Previous Posts</h2>
+            <h2>Posts</h2>
         </div>
+        {{#each issues as |issue|}}
         <div class="previous-post">
-            <div class="previous-post-poster">
-                <div class="previous-post-name">
-                    <h4>Ryan Scherr {{ post.user_name }}</h4>
-                </div>
-                <div>
-                    <h4>Student {{ post.role }}</h4>
-                </div>
-            </div>
             <div class="previous-post-title">
-                <p>I can't seems to figure out how to make this button work in JS...help!! {{ post.title }}</p>
+                <a href="/issue/{{issue.id}}"><h4>{{issue.title}}</h4></a>
             </div>
-            <div>
-                <button class="btn view-post-btn">View Post</button>
+            <div class="previous-post-body">
+                <p class="italic">Posted by {{issue.user.name}} on {{issue.date_created}}</p>
+                <p>{{issue.content}}</p>
             </div>
         </div>
+        {{/each}}
     </div>
