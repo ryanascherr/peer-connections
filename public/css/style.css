@@ -214,21 +214,6 @@ header {
     font-style: italic;
 }
 
-/* .previous-post-poster {
-    display: flex;
-    flex-direction: column;
-}
-
-.previous-post-name {
-    margin-bottom: 10px;
-}
-
-.view-post-btn {
-    padding: 10px;
-    background-color: white;
-    border: 2px solid #4E5C74;
-} */
-
 .overflow {
     max-height: 100px;
     overflow: auto;
@@ -238,23 +223,18 @@ header {
     position: relative;
   }
   
-/* .card-style2:after {
-position: absolute;
-bottom: 0;  
-height: 100%;
-width: 100%;
-content: "";
-background: linear-gradient(to top,
-    rgba(255,255,255, 1) 5%, 
-    rgba(255,255,255, 0) 60%
-);
-pointer-events: none;
-} */
-
 .issue-box {
     border: 2px solid #4E5C74;
     padding: 10px;
     border-radius: 10px;
+}
+
+.collapsible-header {
+    background-color: var(--dark-blue);
+}
+
+.collapsible-header a {
+    color: white;
 }
 
 .pic-name {
@@ -265,7 +245,7 @@ pointer-events: none;
 }
 
 .issue-title {
-    color: #4E5C74;
+    color: white;
     text-align: center;
     margin: 10px 0;
 }
