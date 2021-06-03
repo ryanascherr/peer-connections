@@ -67,8 +67,7 @@ header {
 
 .profile-title {
     text-align: center;
-    display: flex;
-    flex-direction: column;
+    color: var(--dark-blue);
 }
 
 .profile-body {
@@ -80,6 +79,8 @@ header {
     padding: 10px;
     border: 2px solid #4E5C74;
     box-shadow: 5px 5px 5px gray;
+    color: var(--dark-blue);
+    width: 90%;
 }
 
 .picture-edit {
@@ -129,7 +130,8 @@ header {
 
 .all-pictures {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     border-radius: 10px;
 }
 
@@ -179,7 +181,9 @@ header {
 }
 
 .post-list {
-    margin-top: 15px;
+    width: 90%;
+    margin: 15px auto;
+    color: var(--dark-blue);
 }
 
 .previous-post {
@@ -187,7 +191,7 @@ header {
     flex-direction: column;
     justify-content: center;
     border: 2px solid var(--dark-blue);
-    border-radius: 10px;
+    border-radius: 15px;
     margin-bottom: 15px;
 }
 
@@ -195,6 +199,11 @@ header {
     background-color: var(--dark-blue);
     width: 100%;
     padding: 10px;
+    border-radius: 10px 10px 0 0;
+}
+
+.previous-post-title h4 {
+    margin: 0;
 }
 
 .previous-post-title a {
