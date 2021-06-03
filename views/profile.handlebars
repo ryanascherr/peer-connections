@@ -43,16 +43,6 @@
         <h2>Posts</h2>
     </div>
     {{#each issues as |issue|}}
-    <div class="previous-post">
-        <div class="previous-post-title">
-            <a href="/issue/{{issue.id}}"><h4>{{issue.title}}</h4></a>
-        </div>
-
-        <div class="previous-post-body">
-            <p class="italic">Posted by {{issue.user.name}} on {{format_date issue.date_created}}</p>
-            <p>{{issue.content}}</p>
-
-        {{#each issues as |issue|}}
         <div class="previous-post">
             <div class="previous-post-title">
                 <a href="/issue/{{issue.id}}"><h4>{{issue.title}}</h4></a>
@@ -62,7 +52,6 @@
                 <p>{{issue.content}}</p>
             </div>
         </div>
-    </div>
     {{/each}}
 </div>
 
