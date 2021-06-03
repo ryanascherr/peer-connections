@@ -30,7 +30,9 @@
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.2"
   },
+
   "devDependencies": {
     "handlebars-helper-moment": "^0.2.0"
   }
+
 }
