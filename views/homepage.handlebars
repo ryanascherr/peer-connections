@@ -1,6 +1,5 @@
 <div class="explanation">
-  <p>A community board, dedicated to enhancing students of Trilogies ability to connect with peers, allowing for an improved learning experience through peer experience sharing. You can search your issue below, click on popular issues below, or make your own issue by creating an account or logging in.</h2>
-</p>
+  <p class="paragraph">A community board dedicated to enhancing students of Trilogies' ability to connect with peers, allowing for an improved learning experience through peer experience sharing. You can click on recent issues below, or make your own issue by creating an account or logging in.</p>
 {{#if logged_in}}
   <div class="create-btn-box">
     <a href="/create"><button class="create-btn">Create a Post</button></a>
@@ -13,7 +12,7 @@
   </svg></button> --}}
 </div>
 <section>
-  <div class="container">
+  <div class="homepage-container">
     <div class="text-center mb-5">
       <h2 class="display-20 display-md-18 display-lg-16"></h2>
     </div>
@@ -21,7 +20,7 @@
           <ul class="collapsible card-body">
             <li>
               <div class="collapsible-header">
-                <h5><a href="/issue/{{issue.id}}" class="" data-id="{{issue.id}}"><span>{{issue.title}}</span></a></h5>
+                <h5 class="h5"><a href="/issue/{{issue.id}}" class="" data-id="{{issue.id}}"><span>{{issue.title}}</span></a></h5>
                 <p class="issue-title"><i>{{issue.user.name}} posted on {{format_date issue.date_created}}</i></p>
               </div>
             <p class="collapsible-body issue-content"><span>{{issue.content}}</span></p>
