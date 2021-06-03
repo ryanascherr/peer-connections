@@ -28,7 +28,7 @@
 <div class="all-comments">
     {{#each issues.comments as |comment|}}
         <div class="comment-box">
-            <h6>{{comment.user.name}} posted on {{comment.date_created}}</h6>
+            <h6>{{comment.user.name}} posted on {{format_date comment.date_created}}</h6>
             <p>{{comment.content}}</p>
         </div>
     {{/each}}
