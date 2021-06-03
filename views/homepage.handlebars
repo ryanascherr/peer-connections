@@ -1,16 +1,16 @@
 <div class="explanation">
-  <h2>A community board, dedicated to enhancing students of Trilogies ability to connect with peers, allowing for an improved learning experience through peer experience sharing. You can search your issue below, click on popular issues below, or make your own issue by creating an account or logging in.</h2>
-</div>
+  <p>A community board, dedicated to enhancing students of Trilogies ability to connect with peers, allowing for an improved learning experience through peer experience sharing. You can search your issue below, click on popular issues below, or make your own issue by creating an account or logging in.</h2>
+</p>
 {{#if logged_in}}
   <div class="create-btn-box">
     <a href="/create"><button class="create-btn">Create a Post</button></a>
   </div>
 {{/if}}
-<div class="search-bar">
+{{!-- <div class="search-bar">
   <input type="text" placeholder="Search...">
   <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
   <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-  </svg></button>
+  </svg></button> --}}
 </div>
 <section>
   <div class="container">
@@ -20,9 +20,11 @@
       {{#each issues as |issue|}}
           <ul class="collapsible card-body">
             <li>
-            <h6 class="collapsible-header issue-title"><i>{{issue.user.name}} posted on {{issue.date_created}}...</i></h6>
-            <h5 href="/issue/{{issue.id}}" class="test" data-id="{{issue.id}}">{{issue.title}}</span></a></h5>
-            <p  class="collapsible-body issue-content"><span>{{issue.content}}</p>
+              <div class="collapsible-header">
+                <h5><a href="/issue/{{issue.id}}" class="" data-id="{{issue.id}}"><span>{{issue.title}}</span></a></h5>
+                <h6 class="issue-title"><i>{{issue.user.name}} posted on {{format_date issue.date_created}}</i></h6>
+              </div>
+            <p class="collapsible-body issue-content"><span>{{issue.content}}</span></p>
             </li>
           </ul>
       {{/each}}
