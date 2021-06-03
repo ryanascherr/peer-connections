@@ -17,21 +17,23 @@
     <div class="text-center mb-5">
       <h2 class="display-20 display-md-18 display-lg-16"></h2>
     </div>
-    <div class="row">
+    {{!-- <div class="column"> --}}
       {{#each issues as |issue|}}
-      <div class="col-lg-4 col-md-6 mb-2-6">
-        <div class="card card-style2">
-          <div class="card-img">
-          </div>
-          <div class="card-body">
-            <h6>{{issue.user.name}} posted on {{issue.date_created}}...</h6>
-            <h5><a href="/issue/{{issue.id}}" class="test" data-id="{{issue.id}}">{{issue.title}}</a></h5>
-            <p class="display-30 overflow">{{issue.content}}</p>
-          </div>
-        </div>
-      </div>
+          <ul class="collapsible card-body">
+            <li>
+            <h6 class="collapsible-header issue-title"><i>{{issue.user.name}} posted on {{issue.date_created}}...</i></h6>
+            <h5 href="/issue/{{issue.id}}" class="test" data-id="{{issue.id}}">{{issue.title}}</span></a></h5>
+            <p  class="collapsible-body issue-content"><span>{{issue.content}}</p>
+            </li>
+          </ul>
       {{/each}}
-    </div>
+       <ul class="collapsible">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    </ul>
+    {{!-- </div> --}}
   </div>
 </section>
 
