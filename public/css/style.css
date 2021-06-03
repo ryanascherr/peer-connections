@@ -111,8 +111,55 @@ header {
     max-height: 200px;
 }
 
+.picture-selection {
+    margin-top: 15px;
+}
+
+.profile-picture-container-small {
+    max-width: 100px;
+    max-height: 100px;
+    padding: 10px;
+}
+
+.profile-picture-container-small img:hover {
+    transform: scale(1.1);
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.all-pictures {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+.pics-and-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-blue);
+    border-radius: 10px;
+}
+
 .profile-picture {
     max-width: 100%;
+}
+
+.all-pictures {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--dark-blue);
+}
+
+.picture-select-box {
+    padding: 10px;
+}
+
+.picture-select-btn {
+    padding: 10px;
+    background-color: white;
+    border: 2px solid #4E5C74;
 }
 
 .profile-info {
@@ -288,11 +335,15 @@ textarea {
     padding: 10px;
     width: 50%;
 }
-/* issue-title and content are the header/content sections of the accordian on homepage */
-.issue-title {
-    
-}
 
 .issue-content {
     margin-bottom: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.highlight {
+    border: 2px solid white;
 }

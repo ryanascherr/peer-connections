@@ -1,35 +1,60 @@
-    <div class="profile-title">
-        <h1>Profile</h1>
+<div class="profile-title">
+    <h1>Profile</h1>
+</div>
+<div class="profile-body">
+    <div class="profile-info">
+        <h2>{{ name }}</h2>
     </div>
-    <div class="profile-body">
-        <div class="profile-info">
-            <h2>{{ name }}</h2>
+    <div class="picture-edit">
+        <div class="profile-picture-container">
+            <img src="/img/pic-0.png" alt="" class="profile-picture" id="profile-picture">
         </div>
-        <div class="picture-edit">
-            <div class="profile-picture-container">
-                <img src="/img/avatar.png" alt="" class="profile-picture">
-            </div>
-            <div class="btn-container">
-                <button class="btn edit-profile-btn">Edit Profile Picture</button>
-            </div>
+        <div class="btn-container">
+            <button class="btn edit-profile-btn">Edit Profile Picture</button>
         </div>
-        <div class="profile-info">
-            <h2>{{ email }}</h2>
+        <div class="picture-selection hidden">
+            <div class="pics-and-btn">
+                <div class="all-pictures">
+                    <div class="profile-picture-container-small">
+                        <img src="/img/pic-0.png" alt="" class="profile-picture" data-path="/img/pic-0.png">
+                    </div>
+                    <div class="profile-picture-container-small">
+                        <img src="/img/pic-1.png" alt="" class="profile-picture" data-path="/img/pic-1.png">
+                    </div>
+                    <div class="profile-picture-container-small">
+                        <img src="/img/pic-2.png" alt="" class="profile-picture" data-path="/img/pic-2.png">
+                    </div>
+                    <div class="profile-picture-container-small">
+                        <img src="/img/pic-3.png" alt="" class="profile-picture" data-path="/img/pic-3.png">
+                    </div>
+                </div>
+                <div class="picture-select-box">
+                    <button class="btn picture-select-btn">Select Profile Picure</button>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="post-list">
-        <div class="post-title">
-            <h2>Posts</h2>
-        </div>
-        {{#each issues as |issue|}}
+    <div class="profile-info">
+        <h2>{{ email }}</h2>
+    </div>
+</div>
+<div class="post-list">
+    <div class="post-title">
+        <h2>Posts</h2>
+    </div>
+    {{#each issues as |issue|}}
         <div class="previous-post">
             <div class="previous-post-title">
                 <a href="/issue/{{issue.id}}"><h4>{{issue.title}}</h4></a>
             </div>
             <div class="previous-post-body">
-                <p class="italic">Posted by {{issue.user.name}} on {{issue.date_created}}</p>
+                <p class="italic">Posted by {{issue.user.name}} on {{format_date issue.date_created}}</p>
                 <p>{{issue.content}}</p>
             </div>
         </div>
-        {{/each}}
-    </div>
+    {{/each}}
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script src="/js/profile.js"></script>
