@@ -1,37 +1,39 @@
-<div class="issue-box">
-    <div class="pic-name">
-        <img src="" alt="">
-        <h6>{{issues.user.name}} posted...</h6>
-    </div>
-    <div class="issue-full">
-        <div class="issue-title">
-            <h5>{{issues.title}}</h5>
+<div class="width">
+    <div class="issue-box">
+        <div class="pic-name">
+            <img src="" alt="">
+            
         </div>
-        <div class="issue-content">
-            <p>{{issues.content}}</p>
+        <div class="issue-full">
+            <div class="issue-title">
+                <h5>{{issues.title}}</h5>
+            </div>
+            <div class="issue-content">
+                <p>{{issues.content}}</p>
+            </div>
+            <h6 class="italic">{{issues.user.name}} posted on {{format_date issues.date_created}}</h6>
         </div>
     </div>
-</div>
 
-{{#if logged_in}}
-<div class="reply-box">
-    <h6>Write a Response</h6>
-    <textarea class="comment-field" name="input-field" id="" cols="30" rows="5"></textarea>
-    <div class="field-submit-btn-box">
-        <button class="btn btn-primary field-submit-btn" type="submit" data-id="{{issues.id}}">Submit</button>
-    </div>
-</div>
-{{/if}}
-
-<h6>{{issues.user_name}}</h6>
-
-<div class="all-comments">
-    {{#each issues.comments as |comment|}}
-        <div class="comment-box">
-            <h6>{{comment.user.name}} posted on {{format_date comment.date_created}}</h6>
-            <p>{{comment.content}}</p>
+    {{#if logged_in}}
+    <div class="reply-box">
+        <h6>Write a Response</h6>
+        <textarea class="comment-field" name="input-field" id="" cols="30" rows="5"></textarea>
+        <div class="field-submit-btn-box">
+            <button class="btn btn-primary field-submit-btn" type="submit" data-id="{{issues.id}}">Submit</button>
         </div>
-    {{/each}}
+    </div>
+    {{/if}}
+
+    <h6 class="comments">Comments</h6>
+    <div class="all-comments">
+        {{#each issues.comments as |comment|}}
+            <div class="comment-box">
+                <h6 class="italic">{{comment.user.name}} posted on {{format_date comment.date_created}}</h6>
+                <p>{{comment.content}}</p>
+            </div>
+        {{/each}}
+    </div>  
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

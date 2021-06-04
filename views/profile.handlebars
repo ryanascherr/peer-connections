@@ -1,9 +1,9 @@
 <div class="profile-title">
-    <h1>Profile</h1>
+    <h2>Profile</h2>
 </div>
 <div class="profile-body">
     <div class="profile-info">
-        <h2>{{ name }}</h2>
+        <h3>{{ name }}</h3>
     </div>
     <div class="picture-edit">
         <div class="profile-picture-container">
@@ -56,25 +56,28 @@
         </div>
     </div>
     <div class="profile-info">
-        <h2>{{ email }}</h2>
+        <h3>{{ email }}</h3>
     </div>
 </div>
-<div class="post-list">
-    <div class="post-title">
-        <h3>Posts</h3>
+<section>
+  <div class="homepage-container">
+      <h3>Posts</h3>
+    <div class="text-center mb-5">
+      <h2 class="display-20 display-md-18 display-lg-16"></h2>
     </div>
-    {{#each issues as |issue|}}
-        <div class="previous-post">
-            <div class="previous-post-title">
-                <a href="/issue/{{issue.id}}"><h4>{{issue.title}}</h4></a>
-            </div>
-            <div class="previous-post-body">
-                <p class="italic">Posted by {{issue.user.name}} on {{format_date issue.date_created}}</p>
-                <p>{{issue.content}}</p>
-            </div>
-        </div>
-    {{/each}}
-</div>
+      {{#each issues as |issue|}}
+          <ul class="collapsible card-body">
+            <li>
+              <div class="collapsible-header">
+                <h5 class="h5"><a href="/issue/{{issue.id}}" class="" data-id="{{issue.id}}"><span>{{issue.title}}</span></a></h5>
+                <p class="issue-title"><i>{{issue.user.name}} posted on {{format_date issue.date_created}}</i></p>
+              </div>
+            <p class="collapsible-body issue-content"><span>{{issue.content}}</span></p>
+            </li>
+          </ul>
+      {{/each}}
+  </div>
+</section>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 

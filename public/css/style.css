@@ -8,16 +8,20 @@
     --dark-blue: #4E5C74;
 }
 
-body {
-    margin: 0 2.5%;
+.width {
+    width: 95%;
+    margin: 0 auto;
 }
 
-header {
-    color: #4E5C74;
+.header {
+    color: white;
     text-align: center;
     margin-bottom: 30px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    background-color: var(--dark-blue);
+    padding: 30px 10px;
 }
 
 .search-bar {
@@ -43,7 +47,10 @@ header {
 
 .explanation {
     width: 75%;
-    margin: 0 auto;
+    margin: 30px auto;
+}
+
+.paragraph {
     margin-bottom: 30px;
 }
 
@@ -52,17 +59,34 @@ header {
 }
 
 .page-title {
-    /* width: 50%; */
     display: flex;
     align-items: center;
     font-size: 36px;
 }
 
+.page-title:hover {
+    color: white;
+}
+
+.h1 {
+    margin: 0;
+    color: white;
+    font-size: 36px;
+    line-height: 1.0;
+    font-weight: normal;
+}
+
 .nav {
-    /* width: 50%; */
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    background-color: var(--dark-blue);
+    box-shadow: none;
+}
+
+.nav a {
+    color: white;
+    padding: 10px;
 }
 
 .profile-title {
@@ -195,14 +219,22 @@ header {
     margin-bottom: 15px;
 }
 
+.previous-post p {
+    margin: 0;
+}
+
 .previous-post-title {
     background-color: var(--dark-blue);
     width: 100%;
     padding: 10px;
     border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    align-items: center;
 }
 
-.previous-post-title h4 {
+.previous-post-title h4, .previous-post-title p {
     margin: 0;
 }
 
@@ -246,6 +278,10 @@ header {
     color: white;
 }
 
+.h5 {
+    margin: 0;
+}
+
 .pic-name {
     display: flex;
     justify-content: flex-start;
@@ -257,6 +293,14 @@ header {
     color: white;
     text-align: center;
     margin: 10px 0;
+}
+
+.issue-box {
+    color: var(--dark-blue);
+}
+
+.issue-full .issue-title {
+    color: var(--dark-blue);
 }
 
 .reply-box {
@@ -306,23 +350,35 @@ textarea {
     cursor: pointer;
     color: #4E5C74;
 }
-
+/* 
 .issue-title-create, .issue-text-create {
     width: 25%;
     padding: 10px;
-}
+} */
 
 .blue {
     color: #4E5C74;
 }
 
 .all-comments {
+    color: #4E5C74;
+    border: 2px solid var(--dark-blue);
+    border-radius: 10px;
+    min-height: 100px;
+}
+
+.comments {
     margin-top: 30px;
 }
 
 .comment-box {
     padding: 10px;
-    width: 50%;
+    margin-bottom: 10px;
+}
+
+.comment-box p {
+    margin: 0;
+    padding: 0;
 }
 
 .issue-content {
@@ -342,3 +398,14 @@ textarea {
     justify-content: space-between;
     align-items: center;
 }
+
+.homepage-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.homepage-container h3 {
+    color: var(--dark-blue);
+}
+
+
