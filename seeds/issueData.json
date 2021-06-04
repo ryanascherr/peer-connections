@@ -1,47 +1,47 @@
 [
     {
     "title": "Need help with this homework",
-    "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, magnam. Modi ducimus, cumque magni sapiente hic vel obcaecati! Ad distinctio aliquid debitis esse quod assumenda optio enim dolores reprehenderit alias?",
-    "user_id": "1"
+    "content": "Homework 9 is giving me a lot of trouble. Anyone have any suggestions on how to start?",
+    "user_id": "4"
     },
     {
     "title": "Not sure how to align these two divs properly",
-    "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, magnam. Modi ducimus, cumque magni sapiente hic vel obcaecati! Ad distinctio aliquid debitis esse quod assumenda optio enim dolores reprehenderit alias?",
-    "user_id": "1"
+    "content": "I want two of my divs to be aligned horizontally, but I forget how to do that.",
+    "user_id": "3"
     },
     {
     "title": "Does anyone know a good resource on responsive design?",
-    "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, magnam. Modi ducimus, cumque magni sapiente hic vel obcaecati! Ad distinctio aliquid debitis esse quod assumenda optio enim dolores reprehenderit alias?",
-    "user_id": "1"
+    "content": "I really want to improve some previous assignments with responsive design. I'm not sure where to look though. Does anyone have any good resources on responsive design?",
+    "user_id": "5"
     },
     {
     "title": "Not sure why I can't do a git pull",
-    "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, magnam. Modi ducimus, cumque magni sapiente hic vel obcaecati! Ad distinctio aliquid debitis esse quod assumenda optio enim dolores reprehenderit alias?",
-    "user_id": "2"
+    "content": "I get a weird error message whenever I try to do a git pull, but I don't know what it means. Has anyone come across this or know how to fix it?",
+    "user_id": "1"
     },
     {
     "title": "My javascript isn't working!!",
-    "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, magnam. Modi ducimus, cumque magni sapiente hic vel obcaecati! Ad distinctio aliquid debitis esse quod assumenda optio enim dolores reprehenderit alias?",
+    "content": "I made a function that makes some text appear when you click on a button. But when I try it on my page, nothing happens. Any idea why this might be happening?",
     "user_id": "2"
     },
     {
-    "title": "I feel like the next homework is going to be a doozy. Anyone want to meet up and study?",
-    "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, magnam. Modi ducimus, cumque magni sapiente hic vel obcaecati! Ad distinctio aliquid debitis esse quod assumenda optio enim dolores reprehenderit alias?",
-    "user_id": "2"
+    "title": "Anyone want to meet up and study for the next homework?",
+    "content": "Express has been giving me a lot of trouble and I know this homework is going to be tough for me. If anyone would want to meet up and tackle this together, let me know!",
+    "user_id": "4"
     },
     {
-    "title": "No matter what I try, my server won't connect. Any help would be appreciated.",
-    "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, magnam. Modi ducimus, cumque magni sapiente hic vel obcaecati! Ad distinctio aliquid debitis esse quod assumenda optio enim dolores reprehenderit alias?",
-    "user_id": "3"
+    "title": "No matter what I try, my server won't connect.",
+    "content": "I copied the code from the previous class assignment exactly, but it still won't connect. I'm not sure what else to try!",
+    "user_id": "2"
     },
     {
     "title": "Anyone else not able to log in to bootcampspot?",
-    "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, magnam. Modi ducimus, cumque magni sapiente hic vel obcaecati! Ad distinctio aliquid debitis esse quod assumenda optio enim dolores reprehenderit alias?",
-    "user_id": "3"
+    "content": "I keep trying to log in but the page just loads forever. Is this just me or are others having issues as well?",
+    "user_id": "1"
     },
     {
     "title": "Just want to say thanks to all the teachers and tutors!",
-    "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, magnam. Modi ducimus, cumque magni sapiente hic vel obcaecati! Ad distinctio aliquid debitis esse quod assumenda optio enim dolores reprehenderit alias?",
+    "content": "Jeff and Dan and all of the tutors have been so helpful! Just wanted to shout them out and say thanks for all of their hard work.",
     "user_id": "3"
     }
   ]
