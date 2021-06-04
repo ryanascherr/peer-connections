@@ -4,6 +4,25 @@
     box-sizing: border-box;
 }
 
+.light-mode {
+    background-color: white;
+    color: var(--dark-blue);
+}
+
+.dark-mode {
+    background-color: #202124;
+    color: white;
+}
+
+.material-icons {
+    border: 2px solid var(--dark-blue);
+}
+
+.material-icons:hover {
+    cursor: pointer;
+    border: 2px solid white;
+}
+
 :root {
     --dark-blue: #4E5C74;
 }
@@ -71,7 +90,7 @@
 .h1 {
     margin: 0;
     color: white;
-    font-size: 36px;
+    font-size: 48px;
     line-height: 1.0;
     font-weight: normal;
 }
@@ -82,6 +101,11 @@
     align-items: center;
     background-color: var(--dark-blue);
     box-shadow: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
 }
 
 .nav a {

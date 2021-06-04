@@ -15,20 +15,21 @@
     <div class="nav">
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <div>
+        <div class="nav-links">
             <a href="/">Home</a>
             <a href="/profile">Profile</a>
             <a id="logout" href="/">Logout</a>
         </div>
         {{else}}
-        <div>
+        <div class="nav-links">
             <a href="/">Home</a>
             <a href="/login">Login</a>
         </div>
         {{/if}}
+        <i class="small material-icons">wb_sunny</i>
     </div>
 </header>
-<body>
+<body class="light-mode">
     {{{body}}}
 {{#if logged_in}}
 <script src="/js/logout.js"></script>    
@@ -36,5 +37,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
 <script src="/js/materialize.js"></script>
+<script src="/js/light-mode.js"></script>
 </body>
 </html>
