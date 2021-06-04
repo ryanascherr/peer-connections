@@ -21,6 +21,7 @@ submitBtn.click(function(e) {
     });
     //maybe refresh
     document.location.reload();
+    console.log("Success");
     //This works, but not like it should. Need to look into this later.
     //   if (response.ok) {
     //     document.location.replace('/');
