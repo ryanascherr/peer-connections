@@ -26,7 +26,7 @@
   Powerpoint Presentation Link - https://docs.google.com/presentation/d/1sL56NghAsjHWPZ5V_UXPgW5sTKHPAQas/edit#slide=id.p1
   
   ## Contributing
-   All contributions are welcomed and appreciated! 
+   All contributions are welcomed and very appreciated! 
 
    ## Tests:
   To run tests, run the following command:
